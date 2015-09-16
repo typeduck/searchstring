@@ -1,6 +1,6 @@
 {
     "name": "searchstring",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "parse a string into JSON-based search query",
     "main": "index.js",
     "scripts": {

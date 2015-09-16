@@ -3,25 +3,27 @@
 # search values.
 ###############################################################################
 
-module.exports = (s) -> new SearchString(s)
+module.exports = (s, o) -> new SearchString(s, o)
 
 rxMulti = /(\S+):(\'|\")(.*?)(\2)/g
 rxSingle = /(\S+):(\S*)/g
 rxQuoted = /(\'|\")(.*?)(\1)/g
 
 class SearchString
-  constructor: (orig) ->
+  constructor: (orig, opts = {}) ->
     s = orig
+    opts.lowercase ?= true
     props = {}
     terms = [] # unique (non-property) words and quoted multi-word values
     words = [] # unique aggregation of all words
+    makeProp = (k) -> if opts.lowercase then k.toLowerCase() else k
     # Pull out quoted properties
     while( m = rxMulti.exec(s) )
-      props[m[1].toLowerCase()] = m[3]
+      props[makeProp(m[1])] = m[3]
     s = s.replace(rxMulti, "")
     # Pull out non-quoted properties
     while( m = rxSingle.exec(s) )
-      props[m[1].toLowerCase()] = m[2]
+      props[makeProp(m[1])] = m[2]
     s = s.replace(rxSingle, "")
     # Pull out quoted strings into the terms
     while ( m = rxQuoted.exec(s) )

@@ -9,11 +9,20 @@ s.props.color;// "black"
 s.props.type;// "small box"
 s.terms;// ["round", "square"]
 s.words;// ["black", "small", "box", "round", "square"]
+
+s = searchstring('keepCase:"keep my case!"', {lowercase: false});
+s.props.keepCase;// "keep my case!"
 ```
 
-## Properties
+## Instantiation
 
-The **searchstring** instance creates an object with four Getters.
+searchstring(str, [opts]);
+
+- **str**: *String* search query to parse
+- **opts**: *Object* options
+  - **lowercase**: *Boolean* lowercase property names (default: true)
+
+The **searchstring** instance is an object with four Getters:
 
 ### orig
 

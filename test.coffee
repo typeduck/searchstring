@@ -41,6 +41,14 @@ describe "SearchString", () ->
     search.terms.length.should.equal(0)
     search.words.length.should.equal(1)
     search.words.indexOf("yes!").should.not.equal(-1)
+  it "should NOT lowercase optionally", () ->
+    search = SS("fooBar:'foo and bar'", {lowercase: false})
+    search.props.fooBar.should.equal("foo and bar")
+    search.terms.length.should.equal(0)
+    search.words.length.should.equal(3)
+    search.words.indexOf("foo").should.not.equal(-1)
+    search.words.indexOf("and").should.not.equal(-1)
+    search.words.indexOf("bar").should.not.equal(-1)
   it "should ignore incomplete props", () ->
     search = SS("incomplete:")
     search.props.incomplete.should.equal("")
