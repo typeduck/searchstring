@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.0.1
+
+- minor clarification in README only
+
 ## v2.0.0
 
 - major change in API
