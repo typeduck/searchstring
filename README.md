@@ -12,6 +12,12 @@ conds[2];// {value: 5, prop: "size", op: ">"}
 conds[3];// {value: "evil", op: "!"}
 ```
 
+## Note about escaping (how many backslashes do I need?)
+
+In this Markdown file, there are **extra** backslashes to make the HTML
+documentation display correctly. If you are reading README.md "directly" in your
+text editor, you should interpret each double-backslash as a single backslash!
+
 ## Parsing
 
 The search string is a series of space-separated terms. A term consists of:
@@ -24,7 +30,7 @@ The search string is a series of space-separated terms. A term consists of:
     - aStringValue
     - "a string value",
     - 'singled-quote value'
-    - 'it\'s with an escaped quote'
+    - 'it\\'s with an escaped quote'
 
 The value returned is parsed into a number if it looks like a number.
 
@@ -42,8 +48,8 @@ type of quote, or use the backslash to escape the next character. In fact, the
 backslash *always* escapes the next character, even outside of quotes:
 
 - "it's the same"
-- 'it\'s the same'
-- it\'s\ the\ same
+- 'it\\'s the same'
+- it\\'s\\ the\\ same
 
 All of these variants are handled only because humans the world over agree that
 backslashes should be used in moderation and when absolutely necessary.
