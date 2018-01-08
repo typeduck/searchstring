@@ -1,21 +1,25 @@
 {
-    "name": "searchstring",
-    "version": "1.0.2",
-    "description": "parse a string into JSON-based search query",
-    "main": "index.js",
-    "scripts": {
-        "test": "mocha -b --require coffee-script/register --compilers coffee:coffee-script/register test.coffee",
-        "prepublish": "coffee -c *.coffee"
-    },
-    "keywords": ["search"],
-    "files": ["index.js"],
-    "devDependencies": {
-        "should": "^7.1.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/typeduck/searchstring.git"
-    },
-    "author": "Ruquay K Calloway",
-    "license": "MIT"
+  "name": "searchstring",
+  "version": "2.0.0",
+  "description": "parse a string into JSON-based search query",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -b test.js"
+  },
+  "keywords": [
+    "search",
+    "query"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "should": "^13.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typeduck/searchstring.git"
+  },
+  "author": "Ruquay K Calloway",
+  "license": "MIT"
 }
